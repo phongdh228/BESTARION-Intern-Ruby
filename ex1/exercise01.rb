@@ -20,7 +20,7 @@ def check_natural_number(input)
         return true if character == 32
             
         if character > 58 || character < 47
-            puts "Wronge type. Please enter a natural number!"
+            puts "#{input} is wronge type. Please enter a natural number!"
             return false
         end
     end
@@ -34,7 +34,7 @@ def handle_input()
 
     loop do
         user_input = STDIN.gets.chomp
-
+        wronge_input = []
         #check stop condition
         exit_code = true if user_input.to_i == -1 || element_counter == 99
         
@@ -47,12 +47,17 @@ def handle_input()
                 if check_natural_number(sub_element.delete('')) #kill the space. If not, it will remain space (dont know why LOL)
                     $natural_integer.push(sub_element.to_i)
                     element_counter += 1
+                else
+                    wronge_input << sub_element
                 end
             end
-
+            
             #create UX on the terminal
             system "clear" 
             p $natural_integer
+
+            #displays the wrong input error message
+            puts "#{wronge_input} not imported to list (wronge type)" if wronge_input.size > 0
 
         #insert user input to list if user_input validated
         elsif check_natural_number(user_input) 

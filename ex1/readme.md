@@ -1,5 +1,5 @@
 Ruby: 3.1.2
-IDE: VSCode
+IDE: VSCode 1.71.2
 OS: Ubuntu 22.04
 
 ## Instructions

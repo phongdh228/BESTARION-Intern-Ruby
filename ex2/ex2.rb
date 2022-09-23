@@ -29,13 +29,6 @@ end
 #         csv << ["Dang Hoang Phong","phongpro123@gmail.com", "0987654321", "Ho Chi Minh", "2001/01/01","Like TV 100\", Some special charactor: \\ / ' $ ~ & @ # ( ; "]
 #     end
 # end
-# start = Time.now
-# execute <<-SQL
-#     COPY user(name,email,phone,day_of_birth,profile)
-#     FROM ‘./profiles.csv’
-#     DELIMITER ‘,’
-#     CSV HEADER;
-# SQL
 
 #================================================================
 # start = Time.now
@@ -53,15 +46,7 @@ end
 #     end
 # end
 
-# Post.connection.execute << -SQL
-#   insert into users(name, email, phone, address, day_of_birth, profile_)
 
-# SQL  
-# @connection = ActiveRecord::Base.connection
-# result = @connection.exec_query('select * from users')
-# result.each do |row|
-# puts row
-# end
 def execute_statement(sql)
     results = ActiveRecord::Base.connection.execute(sql)
     if results.present?
@@ -71,11 +56,12 @@ def execute_statement(sql)
     end
 end
 
-#records = execute_statement("insert into users values ('Phong', 'phong@gmail.com', '0987654321','Ho Chi Minh', '01/01/20001','Nani')")
 
 start = Time.now
 CSV.foreach("profiles.csv") do |row|
-    execute_statement("insert into users values (#{row})")
+
+    execute_statement("insert into users values ('#{row[0]}', '#{row[1]}', '#{row[2]}','#{row[3]}', '#{row[4]}','#{row[5]}')")
+    break
 end
 
 finish = Time.now

@@ -57,7 +57,7 @@ def handle_input()
             p $natural_integer
 
             #displays the wrong input error message
-            puts "#{wronge_input} not imported to list (wronge type)" if wronge_input.size > 0
+            puts "The #{wronge_input} you have just enter are not imported to list (wronge type)" if wronge_input.size > 0
 
         #insert user input to list if user_input validated
         elsif check_natural_number(user_input) 

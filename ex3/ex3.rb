@@ -23,14 +23,14 @@ def handle_sub_array(array_created)
             sub_array << element 
         else
         #if not, print the sub array and assign it to hold the current element (array_created[i])
-            puts "Chuoi #{sub_array_counter}: #{sub_array}"
+            puts "Incresed array no#{sub_array_counter}: #{sub_array}"
             sub_array = [array_created[i]]
             sub_array_counter += 1
         end
         i += 1 #increse iteration
 
         #check for the last sub array``
-        puts "Chuoi #{sub_array_counter}: #{sub_array}"  if i == array_created.length
+        puts "Incresed array no#{sub_array_counter}: #{sub_array}" if i == array_created.length
     end
 end
 

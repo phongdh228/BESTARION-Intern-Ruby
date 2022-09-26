@@ -22,14 +22,18 @@ def handle_sub_array(array_created)
         if sub_array.length == 0 || array_created[i-1] < array_created[i]
             sub_array << element 
         else
-        #if not, print the sub array and assign it to hold the current element
+        #if not, print the sub array and assign it to hold the current element (array_created[i])
             puts "Chuoi #{sub_array_counter}: #{sub_array}"
             sub_array = [array_created[i]]
             sub_array_counter += 1
         end
         i += 1 #increse iteration
+
+        #check for the last sub array``
+        if i == array_created.length
+            puts "Chuoi #{sub_array_counter}: #{sub_array}" 
+        end
     end
-    puts "Chuoi #{sub_array_counter}: #{sub_array}" #print the last sub array
 end
 
 #=================================================================

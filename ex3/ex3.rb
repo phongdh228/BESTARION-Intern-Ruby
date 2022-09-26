@@ -13,13 +13,13 @@ def handle_input()
 end
 
 def handle_sub_array(array_created)
-    sub_array = [] #to store increse arrays
+    sub_array = [array_created[0]] #to store increse arrays, hold the first element of the random array
     i = 0 #run iteration over random array
     sub_array_counter = 1 #counting number of arrays
     
     array_created.each do |element|
         #if sub array is empty || previous element of random array is smaller than current element => store current element to sub array
-        if sub_array.length == 0 || array_created[i-1] < array_created[i]
+        if array_created[i-1] < array_created[i]
             sub_array << element 
         else
         #if not, print the sub array and assign it to hold the current element (array_created[i])
@@ -30,9 +30,7 @@ def handle_sub_array(array_created)
         i += 1 #increse iteration
 
         #check for the last sub array``
-        if i == array_created.length
-            puts "Chuoi #{sub_array_counter}: #{sub_array}" 
-        end
+        puts "Chuoi #{sub_array_counter}: #{sub_array}"  if i == array_created.length
     end
 end
 

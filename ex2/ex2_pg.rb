@@ -1,12 +1,11 @@
 #|===========================================================|
 #|===== Read time using csv.read 6.812354835            =====|
-#|===== Import time using pg query command: 1.09902325  =====|
+#|===== Import time using pg query command: 0.944044474 =====|
 #|===========================================================|
 #Read time is not related to import time!
 
 require 'pg'
 require "csv"
-
 #Write to CSV file
 users =["Dang Hoang Phong",
     "phongpro123@gmail.com", 

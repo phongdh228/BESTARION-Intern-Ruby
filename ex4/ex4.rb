@@ -13,23 +13,24 @@ def hash_array(array)
         $master_hash[value] = i 
         i+=1
     end
-    puts $master_hash
 end
 
 def find_pair(array)
     i = 0
     exit_code = false
+    result = Array.new
     array.each do |value|
         break if exit_code == true
-        if $master_hash[$sum-value] != nill
-            puts $master_hash[$sum-value].to_i
-            puts i
+        if $master_hash[$sum-value].nil? ==false && $master_hash[$sum-value] != i
+            result << array[i] 
+            result << array[ $master_hash[$sum-value] ]
             exit_code = true
+        elsif
+            i+=1
         end
-        i+=1
     end
+    p result
 end
 
 hash_array($master_array)
 find_pair($master_array)
-
